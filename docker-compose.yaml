@@ -9,11 +9,10 @@ services:
       - xpack.ml.enabled=false
       - xpack.security.enabled=false
       - "ES_JAVA_OPTS=-Xms2G -Xmx2G"
-      - xpack.reporting.csv.maxSizeBytes=10485760000
-      - cluster.routing.allocation.disk.threshold_enabled=true
-      - cluster.routing.allocation.disk.watermark.low=85%
-      - cluster.routing.allocation.disk.watermark.high=90%
-      - cluster.routing.allocation.disk.watermark.flood_stage=95%
+      - cluster.routing.allocation.disk.threshold_enabled=false
+      - cluster.routing.allocation.disk.watermark.low=95%
+      - cluster.routing.allocation.disk.watermark.high=98%
+      - cluster.routing.allocation.disk.watermark.flood_stage=99%
     restart: unless-stopped
     ulimits:
       memlock:
